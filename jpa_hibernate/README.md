@@ -1,0 +1,1 @@
+Exercicio para treinar o uso de jpa com hibernate
