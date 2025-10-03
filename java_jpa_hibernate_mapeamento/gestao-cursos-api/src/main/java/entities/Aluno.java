@@ -31,6 +31,13 @@ public class Aluno {
         if (telefones != null) this.telefones = new HashSet<>(telefones);
     }
 
+    public Aluno(long id, String nome, Set<Endereco> enderecos, Set<Telefone> telefones) {
+        this.id = id;
+        this.nome = nome;
+        this.enderecos = enderecos;
+        this.telefones = telefones;
+    }
+    
     public long getId() {
         return id;
     }
