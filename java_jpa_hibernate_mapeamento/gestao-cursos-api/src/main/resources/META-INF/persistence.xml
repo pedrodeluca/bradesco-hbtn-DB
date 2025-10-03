@@ -3,10 +3,10 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
 
-    <persistence-unit name="admin-jpa" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="gestao-cursos-jpa" transaction-type="RESOURCE_LOCAL">
         <properties>
 
-            <property name="javax.persistence.jdbc.url" value="jdbc:sqlite:database_admin.db" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:sqlite:database_admin_jpa.db" />
             <property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC" />
 
             <property name="hibernate.hbm2ddl.auto" value="update" />

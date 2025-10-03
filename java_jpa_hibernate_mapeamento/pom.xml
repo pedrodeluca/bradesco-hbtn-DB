@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.techcamps.cadastros</groupId>
-    <artifactId>administrativo-api</artifactId>
-    <description>Projeto Administrativo para cadastros de Clientes e Produtos usando Hibernate e JPA</description>
+    <groupId>com.techcamps.gestao.cursos</groupId>
+    <artifactId>gestao-cursos-api</artifactId>
+    <description>Projeto Gestao de Cursos usando Hibernate e JPA</description>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -44,5 +44,4 @@
             <version>0.1.2</version>
         </dependency>
     </dependencies>
-
 </project>
