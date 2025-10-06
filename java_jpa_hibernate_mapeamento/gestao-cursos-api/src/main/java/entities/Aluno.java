@@ -13,7 +13,13 @@ public class Aluno {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String nome;
+    private String nomeCompleto;
+
+    private String matricula;
+
+    private String nascimento;
+
+    private String email;
 
     @OneToMany(mappedBy = "aluno", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Endereco> enderecos = new HashSet<>();
@@ -24,20 +30,28 @@ public class Aluno {
     public Aluno() {
     }
 
+    public Aluno(long id, String nome, Set<Endereco> enderecos, Set<Telefone> telefones) {
+        this.id = id;
+        this.nomeCompleto = nome;
+        this.enderecos = enderecos;
+        this.telefones = telefones;
+    }
+
+    public Aluno(long id, String nomeCompleto, String matricula, String nascimento, String email) {
+        this.id = id;
+        this.nomeCompleto = nomeCompleto;
+        this.matricula = matricula;
+        this.nascimento = nascimento;
+        this.email = email;
+    }
+
     // Mantemos compatibilidade com código que fornece List: convertemos para Set internamente
     public Aluno(String nome, List<Endereco> enderecos, List<Telefone> telefones) {
-        this.nome = nome;
+        this.nomeCompleto = nome;
         if (enderecos != null) this.enderecos = new HashSet<>(enderecos);
         if (telefones != null) this.telefones = new HashSet<>(telefones);
     }
 
-    public Aluno(long id, String nome, Set<Endereco> enderecos, Set<Telefone> telefones) {
-        this.id = id;
-        this.nome = nome;
-        this.enderecos = enderecos;
-        this.telefones = telefones;
-    }
-    
     public long getId() {
         return id;
     }
@@ -46,12 +60,12 @@ public class Aluno {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeCompleto() {
+        return nomeCompleto;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
     }
 
     public Set<Endereco> getEnderecos() {
@@ -74,4 +88,29 @@ public class Aluno {
 //    public String toString() {
 //        return "id: " + this.id + " |XAXAD nome: " + this.nome + " | enderecos: " + this.enderecos.toString() + " | telefones: " + this.telefones.toString() + "\n";
 //    }
+
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getNascimento() {
+        return nascimento;
+    }
+
+    public void setNascimento(String nascimento) {
+        this.nascimento = nascimento;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
