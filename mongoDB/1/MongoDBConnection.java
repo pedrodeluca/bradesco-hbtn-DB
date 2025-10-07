@@ -76,6 +76,7 @@ public class MongoDBConnection {
             e.printStackTrace();
         }
 
+        //Criar usuario
         Usuario usuario1 = new Usuario("Alice", 25);
         Usuario usuario2 = new Usuario("Bob", 30);
         Usuario usuario3 = new Usuario("Charlie", 35);
@@ -84,6 +85,18 @@ public class MongoDBConnection {
         usuarioOps.inserirUsuario(connection, usuario1);
         usuarioOps.inserirUsuario(connection, usuario2);
         usuarioOps.inserirUsuario(connection, usuario3);
+
+        //Atualizar usuario
+        usuarioOps.atualizarUsuario(connection, "Bob", 32);
+
+        //Consultar registros
+        usuarioOps.consultarUsuarios(connection);
+
+        //Apagar registro
+        usuarioOps.apagarUsuario(connection, "Charlie");
+
+        //Consultar registros
+        usuarioOps.consultarUsuarios(connection);
 
         connection.closeConnection();
     }
